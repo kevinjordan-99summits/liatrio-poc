@@ -1,0 +1,54 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34511.84
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LiatrioPoC.Web", "src\LiatrioPoC.Web\LiatrioPoC.Web.csproj", "{020061D5-0425-4433-BCE5-157E34AA4A34}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LiatrioPoC.Api", "src\LiatrioPoC.Api\LiatrioPoC.Api.csproj", "{C426A6E5-A98E-4F96-B459-D874AC220413}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LiatrioPoC.Core", "src\LiatrioPoC.Core\LiatrioPoC.Core.csproj", "{832C1C25-3991-48EB-8115-922431619EB9}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LiatrioPoC.InMemoryDb", "src\LiatrioPoC.InMemoryDb\LiatrioPoC.InMemoryDb.csproj", "{6CC5A58A-90B3-43CD-BF35-91D45ACF7C7D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{9D244BB4-8FD6-4B80-B8D9-2634B8850849}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LiatrioPoC.CoreTests", "src\LiatrioPoC.CoreTests\LiatrioPoC.CoreTests.csproj", "{2B4F90D3-5B52-4657-BE73-A5C48F3B1DEA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{020061D5-0425-4433-BCE5-157E34AA4A34}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{020061D5-0425-4433-BCE5-157E34AA4A34}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{020061D5-0425-4433-BCE5-157E34AA4A34}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{020061D5-0425-4433-BCE5-157E34AA4A34}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C426A6E5-A98E-4F96-B459-D874AC220413}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C426A6E5-A98E-4F96-B459-D874AC220413}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C426A6E5-A98E-4F96-B459-D874AC220413}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C426A6E5-A98E-4F96-B459-D874AC220413}.Release|Any CPU.Build.0 = Release|Any CPU
+		{832C1C25-3991-48EB-8115-922431619EB9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{832C1C25-3991-48EB-8115-922431619EB9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{832C1C25-3991-48EB-8115-922431619EB9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{832C1C25-3991-48EB-8115-922431619EB9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6CC5A58A-90B3-43CD-BF35-91D45ACF7C7D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6CC5A58A-90B3-43CD-BF35-91D45ACF7C7D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6CC5A58A-90B3-43CD-BF35-91D45ACF7C7D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6CC5A58A-90B3-43CD-BF35-91D45ACF7C7D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2B4F90D3-5B52-4657-BE73-A5C48F3B1DEA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2B4F90D3-5B52-4657-BE73-A5C48F3B1DEA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2B4F90D3-5B52-4657-BE73-A5C48F3B1DEA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2B4F90D3-5B52-4657-BE73-A5C48F3B1DEA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{2B4F90D3-5B52-4657-BE73-A5C48F3B1DEA} = {9D244BB4-8FD6-4B80-B8D9-2634B8850849}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {247EC000-674A-4140-88DA-7FFDC7009801}
+	EndGlobalSection
+EndGlobal
