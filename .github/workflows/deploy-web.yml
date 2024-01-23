@@ -3,6 +3,8 @@ name: Build & Deploy Web App
 on:
   push:
     branches: [ "main" ]
+    paths-ignore:
+      - '.github/**'
   workflow_dispatch:
 
 permissions:
@@ -25,7 +27,7 @@ jobs:
       run: dotnet test --no-build --verbosity normal
     - name: Build Web Docker Image
       working-directory: src
-      run: docker build . -f LiatrioPoC.Web/Dockerfile -t liatriocorekjpoc.azurecr.io/liatriopocweb::${{ github.sha }}
+      run: docker build . -f LiatrioPoC.Web/Dockerfile -t liatriocorekjpoc.azurecr.io/liatriopocweb::1.0.0.${{ github.run_number }}
     - name: Azure Container Registry Login
       uses: Azure/docker-login@v1
       with:
@@ -51,4 +53,4 @@ jobs:
         with:
           app-name: ${{ env.AZURE_WEBAPP_NAME }}
           publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
-          images: 'liatriocorekjpoc.azurecr.io/liatriopocweb:${{ github.sha }}'
+          images: 'liatriocorekjpoc.azurecr.io/liatriopocweb:1.0.0.${{ github.run_number }}'
