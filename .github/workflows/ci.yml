@@ -23,11 +23,15 @@ jobs:
     - name: Test
       run: dotnet test --no-build --verbosity normal
     - name: Publish
-      run: dotnet publish --os linux --arch x64 /t:PublishContainer -c Release
+      run: dotnet publish --os linux --arch x64 -c Release
+    - name: Build the Docker image
+      working-directory: src/LiatrioPoC.Web
+      run: docker build . -t liatriocorekjpoc.azurecr.io/liatriopocweb:latest
     - name: Azure Container Registry Login
       uses: Azure/docker-login@v1
       with:
         username: ${{ secrets.REGISTRY_USERNAME }}
         password: ${{ secrets.REGISTRY_PASSWORD }}
         login-server: ${{ secrets.REGISTRY_LOGIN_SERVER }}
-          
+    - name: Push Container Images
+      run: docker push liatriocorekjpoc.azurecr.io/liatriopocweb
