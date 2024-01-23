@@ -1,4 +1,4 @@
-name: .NET
+name: CI Build
 
 on:
   push:
@@ -22,6 +22,8 @@ jobs:
       run: dotnet build --no-restore
     - name: Test
       run: dotnet test --no-build --verbosity normal
+    - name: Publish
+      run: dotnet publish --os linux --arch x64 /t:PublishContainer -c Release
     - name: Azure Container Registry Login
       uses: Azure/docker-login@v1
       with:
