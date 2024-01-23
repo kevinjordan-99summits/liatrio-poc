@@ -35,5 +35,8 @@ jobs:
       run: terraform validate
     - name: Terraform Format
       run: terraform fmt -check -recursive
+      # Deploy
+    - name: Terraform Init
+      run: terraform init
     - name: Terraform Apply
       run: terraform apply -auto-approve  -var="container_registry_url=${{ secrets.REGISTRY_LOGIN_SERVER }}" -var="container_registry_username=${{ secrets.REGISTRY_USERNAME }}" -var="container_registry_password=${{ secrets.REGISTRY_PASSWORD }}"
