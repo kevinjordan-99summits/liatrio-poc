@@ -24,10 +24,11 @@ jobs:
       run: dotnet test --no-build --verbosity normal
     - name: Build API Docker Image
       working-directory: src
-      run: docker build . -f src/LiatrioPoC.Api/Dockerfile -t liatriopocapi
+      run: docker build . -f LiatrioPoC.Api/Dockerfile -t liatriopocapi
     - name: Build Web Docker Image
       working-directory: src
-      run: docker build -f src/LiatrioPoC.Web/Dockerfile -t liatriocorekjpoc.azurecr.io/liatriopocweb:latest .
+      run: docker build -f ./src/LiatrioPoC.Web/Dockerfile -t liatriocorekjpoc.azurecr.io/liatriopocweb:latest .
+      if: always()
     - name: Azure Container Registry Login
       uses: Azure/docker-login@v1
       with:
