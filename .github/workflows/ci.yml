@@ -22,15 +22,19 @@ jobs:
       run: dotnet build --no-restore
     - name: Test
       run: dotnet test --no-build --verbosity normal
-    - name: Publish
-      run: dotnet publish --os linux --arch x64 -c Release
-    - name: Build the Docker image
-      run: docker build src/LiatrioPoC.Web -t liatriocorekjpoc.azurecr.io/liatriopocweb:latest
+    - name: Build API Docker Image
+      working-directory: src
+      run: docker build LiatrioPoC.Api -t liatriocorekjpoc.azurecr.io/liatriopocapi:latest
+    - name: Build Web Docker Image
+      working-directory: src
+      run: docker build LiatrioPoC.Web -t liatriocorekjpoc.azurecr.io/liatriopocweb:latest
     - name: Azure Container Registry Login
       uses: Azure/docker-login@v1
       with:
         username: ${{ secrets.REGISTRY_USERNAME }}
         password: ${{ secrets.REGISTRY_PASSWORD }}
         login-server: ${{ secrets.REGISTRY_LOGIN_SERVER }}
-    - name: Push Container Images
+    - name: Push API Container Image
+      run: docker push liatriocorekjpoc.azurecr.io/liatriopocapi
+    - name: Push Web Container Image
       run: docker push liatriocorekjpoc.azurecr.io/liatriopocweb
