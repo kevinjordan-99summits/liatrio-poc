@@ -2,6 +2,11 @@ name: 'Terraform CI'
 
 on:
   push:
+    branches: [ "main" ]
+    paths: 
+    - iac
+  pull_request:
+    branches: [ "main" ]
     paths: 
     - iac
   workflow_dispatch:
