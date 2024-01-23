@@ -11,6 +11,11 @@ on:
     - iac
   workflow_dispatch:
 
+env:
+  ARM_CLIENT_ID: "${{ secrets.AZURE_CLIENT_ID }}"
+  ARM_SUBSCRIPTION_ID: "${{ secrets.AZURE_SUBSCRIPTION_ID }}"
+  ARM_TENANT_ID: "${{ secrets.AZURE_TENANT_ID }}"
+  
 jobs:
   terraform-unit-tests:
     name: 'Terraform Unit Tests'
@@ -22,15 +27,13 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v3
-
     - name: Setup Terraform
       uses: hashicorp/setup-terraform@v2
-
     - name: Terraform Init
       run: terraform init -backend=false
-
     - name: Terraform Validate
       run: terraform validate
-
     - name: Terraform Format
       run: terraform fmt -check -recursive
+    - name: Terraform Apply
+      run: terraform apply -auto-approve
