@@ -25,8 +25,7 @@ jobs:
     - name: Publish
       run: dotnet publish --os linux --arch x64 -c Release
     - name: Build the Docker image
-      working-directory: src/LiatrioPoC.Web
-      run: docker build . -t liatriocorekjpoc.azurecr.io/liatriopocweb:latest
+      run: docker build src/LiatrioPoC.Web -t liatriocorekjpoc.azurecr.io/liatriopocweb:latest
     - name: Azure Container Registry Login
       uses: Azure/docker-login@v1
       with:
