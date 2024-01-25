@@ -20,7 +20,8 @@ namespace LiatrioPoC.Web.Controllers
             return View();
         }
 
-        public IActionResult Katas()
+        [Route("/categories/{categoryId:guid}")]
+        public IActionResult Katas(Guid categoryId)
         {
             return View();
         }

@@ -61,7 +61,7 @@ resource "azurerm_linux_web_app" "web_app" {
   }
 
   app_settings = {
-    ApiUrl = azurerm_linux_web_app.api_app.default_hostname
+    ApiUrl = "https://${azurerm_linux_web_app.api_app.default_hostname}"
   }
 
   tags = {

@@ -1,10 +1,11 @@
-name: Build & Deploy Web App
+name: Build & Deploy Web
 
 on:
   push:
     branches: [ "main" ]
     paths-ignore:
       - '.github/**'
+      - 'iac'
   workflow_dispatch:
 
 permissions:
