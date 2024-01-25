@@ -35,6 +35,10 @@ resource "azurerm_linux_web_app" "api_app" {
       docker_registry_username = var.container_registry_username
       docker_registry_password = var.container_registry_password
     }
+
+    cors {
+      allowed_origins = ["*"]
+    }
   }
 
   tags = {
