@@ -25,7 +25,14 @@ namespace LiatrioPoC.Api.Controllers
         [HttpGet("/katas")]
         public IActionResult List()
         {
-            var katas = _kataRepository.GetAll();
+            var katas = new ListKatasQuery(_kataRepository).List();
+            return Ok(katas);
+        }
+
+        [HttpGet("/categories/{categoryId:guid}/katas")]
+        public IActionResult GetByCategory([FromRoute] Guid categoryId)
+        {
+            var katas = new GetKatasByCategoryQuery(_kataRepository).Get(categoryId);
             return Ok(katas);
         }
 

@@ -12,8 +12,6 @@ namespace LiatrioPoC.Core.Repositories
         
         void Insert(Kata kata);
 
-        void Update(Kata kata);
-
         void Delete(Kata kata);
     }
 

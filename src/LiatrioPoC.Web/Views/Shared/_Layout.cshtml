@@ -3,10 +3,25 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - LiatrioPoC.Web</title>
+    <title>@ViewData["Title"] - Liatrio PoC</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="//unpkg.com/alpinejs" defer></script>
 </head>
-<body>
-    @RenderBody()
+<body x-data="layout">
+    <div x-show="isLoading" class="flex w-full h-screen fixed top-0 left-0 bg-black opacity-90 z-50">
+        <div class="m-auto items-center justify-center">
+            <div>
+                <div style="border-top-color:transparent"
+                     class="w-16 h-16 border-4 border-blue-400 border-solid rounded-full animate-spin">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div x-show="!isLoading" class="min-h-full">
+        @RenderBody()
+    </div>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    @await RenderSectionAsync("Scripts", false)
+    <script src="~/js/layout.js" asp-append-version="true"></script>
 </body>
 </html>

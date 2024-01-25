@@ -20,6 +20,11 @@ namespace LiatrioPoC.Web.Controllers
             return View();
         }
 
+        public IActionResult Katas()
+        {
+            return View();
+        }
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
