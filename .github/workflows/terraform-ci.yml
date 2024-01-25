@@ -37,11 +37,30 @@ jobs:
     - name: Terraform Format
       run: terraform fmt -check -recursive
       
-  terraform-deploy:
-    name: 'Terraform Deploy'
+  terraform-deploy-dev:
+    name: 'Terraform Dev'
     runs-on: ubuntu-latest
     needs: terraform-tests
     environment: DEV
+    defaults:
+      run:
+        working-directory: ./iac
+    
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+    - name: Setup Terraform
+      uses: hashicorp/setup-terraform@v2
+    - name: Terraform Init
+      run: terraform init -backend-config="key=tfstate-${{ vars.ENV_NAME }}"
+    - name: Terraform Apply
+      run: terraform apply -auto-approve -var="environment_name=${{ vars.ENV_NAME }}" -var="container_registry_url=${{ secrets.REGISTRY_LOGIN_SERVER }}" -var="container_registry_username=${{ secrets.REGISTRY_USERNAME }}" -var="container_registry_password=${{ secrets.REGISTRY_PASSWORD }}"
+
+  terraform-deploy-prod:
+    name: 'Terraform Prod'
+    runs-on: ubuntu-latest
+    needs: [terraform-tests, terraform-deploy-dev]
+    environment: PROD
     defaults:
       run:
         working-directory: ./iac
