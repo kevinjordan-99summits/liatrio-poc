@@ -13,7 +13,7 @@ namespace LiatrioPoC.InMemoryDb
             new Kata { Id = Guid.NewGuid(), CategoryId = new Guid("33c0eb81-3acc-4127-ae32-b6b2e9752ff0"), Name = "Install Docker Desktop", Description = "Learn how to install Docker on your local machine." },
             new Kata { Id = Guid.NewGuid(), CategoryId = new Guid("33c0eb81-3acc-4127-ae32-b6b2e9752ff0"), Name = "Run a Container", Description = "Learn the basic steps of building an image and running your own container." },
             new Kata { Id = Guid.NewGuid(), CategoryId = new Guid("33c0eb81-3acc-4127-ae32-b6b2e9752ff0"), Name = "Explore Docker Hub", Description = "Go to Docker Hub and look at all the different containers that are offered for various products." },
-            new Kata { Id = Guid.NewGuid(), CategoryId = new Guid("33c0eb81-3acc-4127-ae32-b6b2e9752ff0"), Name = "Muti-Container Apps", Description = "Run and test multiple containers packaged into a single application." },
+            new Kata { Id = Guid.NewGuid(), CategoryId = new Guid("33c0eb81-3acc-4127-ae32-b6b2e9752ff0"), Name = "Multi-Container Apps", Description = "Run and test multiple containers packaged into a single application." },
             new Kata { Id = Guid.NewGuid(), CategoryId = new Guid("33c0eb81-3acc-4127-ae32-b6b2e9752ff0"), Name = "Publish an Image", Description = "Learn how to publish and share your images on Docker Hub." },
             // Continuous Integration
             new Kata { Id = Guid.NewGuid(), CategoryId = new Guid("85f52c16-b6e4-4abc-949a-c136e62a1823"), Name = "Hello World", Description = "Create a hello world workflow using GitHub Actions." },
