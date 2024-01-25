@@ -54,4 +54,4 @@ jobs:
     - name: Terraform Init
       run: terraform init -backend-config="key=tfstate-${{ vars.ENV_NAME }}"
     - name: Terraform Apply
-      run: terraform apply -auto-approve -var="container_registry_url=${{ secrets.REGISTRY_LOGIN_SERVER }}" -var="container_registry_username=${{ secrets.REGISTRY_USERNAME }}" -var="container_registry_password=${{ secrets.REGISTRY_PASSWORD }}"
+      run: terraform apply -auto-approve -var="environment_name=${{ vars.ENV_NAME }}" -var="container_registry_url=${{ secrets.REGISTRY_LOGIN_SERVER }}" -var="container_registry_username=${{ secrets.REGISTRY_USERNAME }}" -var="container_registry_password=${{ secrets.REGISTRY_PASSWORD }}"
