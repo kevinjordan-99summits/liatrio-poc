@@ -8,7 +8,7 @@ namespace LiatrioPoC.Api.Controllers
         [HttpGet("/")]
         public IActionResult Get()
         {
-            return Ok("I am a NOT teapot.");
+            return Ok("I am NOT a teapot.");
         }
     }
 }
