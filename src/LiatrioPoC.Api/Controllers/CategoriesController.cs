@@ -1,4 +1,5 @@
-﻿using LiatrioPoC.Core.Repositories;
+﻿using LiatrioPoC.Core.Entities;
+using LiatrioPoC.Core.Repositories;
 using Microsoft.AspNetCore.Mvc;
 
 namespace LiatrioPoC.Api.Controllers
@@ -17,7 +18,13 @@ namespace LiatrioPoC.Api.Controllers
             _logger = logger;
         }
 
+        /// <summary>
+        /// List all categories
+        /// </summary>
+        /// <response code="200">Returns a list of all categories</response>
         [HttpGet("/categories")]
+        [ProducesResponseType(typeof(IEnumerable<Category>), 200)]
+        [Produces("application/json")]
         public IActionResult List()
         {
             var categories = _categoryRepository.GetAll();
