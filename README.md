@@ -7,6 +7,11 @@ The site also serves as a proof of concept for modern application architecture. 
 - [Demo Web](https://liatrio-web-prod.azurewebsites.net/)
 - [Demo API](https://liatrio-api-prod.azurewebsites.net/swagger/index.html)
 
+## Developer Setup
+In order to run this application locally, you must have Visual Studio installed with [.NET Core 8 SDK](https://dotnet.microsoft.com/en-us/download/dotnet/8.0). Open the LiatrioPoC.sln and run with multiple startup projects enabled (LiatrioPoC.Api & LiatrioPoC.Web).
+
+To test using Docker, you must have [Docker desktop](https://www.docker.com/products/docker-desktop/) installed.
+
 ## Infrastructure Setup
 For simplicity, the Core Resource Group was manually configured. It contains resources that will be used by all environments.
 
