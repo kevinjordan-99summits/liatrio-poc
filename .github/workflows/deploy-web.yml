@@ -6,6 +6,7 @@ on:
     paths-ignore:
       - '.github/**'
       - 'iac'
+      - 'docs'
   workflow_dispatch:
 
 permissions:
