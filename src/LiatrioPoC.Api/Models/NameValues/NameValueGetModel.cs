@@ -16,5 +16,10 @@
         /// Value stored in the setting
         /// </summary>
         public string? Value{ get; set; }
+
+        /// <summary>
+        /// Whether to treat the value as a secret
+        /// </summary>
+        public bool IsSecret { get; set; }
     }
 }
